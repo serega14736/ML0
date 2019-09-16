@@ -56,13 +56,9 @@ return (class)
 
 }
 
-colors <- c("setosa" = "red", "versicolor" = "green3",
+colors <- c("setosa" = "red", "versicolor" = "green3", "virginica" = "blue")
 
-"virginica" = "blue")
-
-plot(iris[, 3:4], pch = 21, bg = colors[iris$Species], col
-
-= colors[iris$Species], asp = 1)
+plot(iris[, 3:4], pch = 21, bg = colors[iris$Species], col = colors[iris$Species], asp = 1)
 
 z <- c(1.7, 2)
 
