@@ -66,3 +66,6 @@ kNN <- function(xl, z, k)
 
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/KNN.png)
 
+## Карта классификации метода k-ближайших соседей ##
+
+![1NN](https://github.com/serega14736/ML0/blob/master/img/kartaKNN.png)
