@@ -11,4 +11,4 @@
 В качестве выборки был взят набор "Ирисы Фишера"  
 Карта классификации выглядит следующим образом:  
 
-![1NN](https://github.com/serega14736/ML0/blob/master/1nn.png)
+![1NN](https://github.com/serega14736/ML0/blob/master/img/karta1NN.png)
