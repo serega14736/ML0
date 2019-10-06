@@ -67,7 +67,7 @@ plot(iris[, 3:4], pch = 21, bg = colors[iris$Species], col
 
 = colors[iris$Species], asp = 1)
 
-z <- c(1.7, 1) 
+z <- c(1.9, 1) 
 
 xl <- iris[, 3:5] 
 
