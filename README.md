@@ -44,3 +44,20 @@
 
 ![equation](http://latex.codecogs.com/gif.latex?w(i,&space;u)&space;=&space;[i&space;\leq&space;k];&space;a(u;&space;X^l,&space;k)&space;=&space;argmax_{y\epsilon&space;Y}&space;\sum^k_{i&space;=&space;1}{[y^i_{u}&space;=&space;y]})
 
+где k -параметр
+
+## Реализация kNN функции ##
+
+```
+kNN <- function(xl, z, k)
+{
+	orderedXl <- sortObjectsByDist(xl, z)
+	n <- dim(orderedXl)[2] - 1
+	classes <- orderedXl[1:k, n + 1]
+	counts <- table(classes)
+	class <- names(which.max(counts))
+	return (class)
+}
+```
+
+
