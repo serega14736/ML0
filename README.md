@@ -64,5 +64,5 @@ kNN <- function(xl, z, k)
 
 Рассмотрим точку Z(3.5, 1.5) на выборке "Ирисы Фишера". Применим метод k-ближайших соседей и получим , что Z принадлежит к классу "зеленых кружочков".
 
-(https://github.com/serega14736/ML0/blob/master/img/KNN.png)
+!(https://github.com/serega14736/ML0/blob/master/img/KNN.png)
 
