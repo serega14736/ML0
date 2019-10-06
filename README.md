@@ -69,3 +69,11 @@ kNN <- function(xl, z, k)
 ## Карта классификации метода k-ближайших соседей ##
 
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/kartaKNN.png)
+
+## 3. kwNN. Метод k-взвешеных ближайших соседей: ##
+
+Метод k-взвешеных ближайших соседей(kwNN). По сравнению с kNN, kwNN принимает во внимание не только колличество соседей определенного класса но и удаленность от классифицируемого обьекта. Для каждого класса определяется оценка близости, у какого класса больше оценка близости тот класс и присваивается классифицируемому обьекту.
+
+Формула алгоритма kwNN:
+
+https://www.codecogs.com/eqnedit.php?latex=w(i,u)&space;=&space;[i\leqslant&space;k]w(i)\&space;a(u,x^{l},k)&space;=&space;arg\max\limits_{y\in&space;Y}\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]w(i)
