@@ -1,4 +1,4 @@
-# SMPR #
+# СМПР #
 
 ## Метод 1NN ##
 Метод ближайших соседей (1NN). Имеется 3 класса объектов, дан некоторый объект, который необходимо классифицировать , т.е. определить , к какому классу он принадлежит.
@@ -70,7 +70,7 @@ kNN <- function(xl, z, k)
 
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/kartaKNN.png)
 
-## LOO_KNN ##
+## Критерий скользящего контроля LOO для kwNN ##
 
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/LOOKNN.png)
 
