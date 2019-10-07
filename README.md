@@ -85,3 +85,25 @@ kNN <- function(xl, z, k)
 <a href="https://www.codecogs.com/eqnedit.php?latex=w(i,u)&space;=&space;[i\leqslant&space;k]w(i)\&space;a(u,x^{l},k)&space;=&space;arg\max\limits_{y\in&space;Y}\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]w(i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?w(i,u)&space;=&space;[i\leqslant&space;k]w(i)\&space;a(u,x^{l},k)&space;=&space;arg\max\limits_{y\in&space;Y}\sum\limits_{i=1}^{k}[y^i_u&space;=&space;y]w(i)" title="w(i,u) = [i\leqslant k]w(i)\ a(u,x^{l},k) = arg\max\limits_{y\in Y}\sum\limits_{i=1}^{k}[y^i_u = y]w(i)" /></a>
 
 
+
+Реализация kwNN фунции
+```
+kwNN <- function(xl, z, k,q)
+{
+	 m <- c("setosa" = 0, "versicolor" = 0, "virginica" = 0)
+	xl <- sortObjectsByDist(xl, z)
+	n <- dim(xl)[2] - 1
+	classes <- xl[1:k, n + 1]
+	for(i in 1:k)
+	{
+		w<-q ^ i
+		m[classes[i]]<-m[classes[i]]+w
+	}
+	class <- names(which.max(m))
+	return (class)
+}
+```
+
+
+## Преимущество метода kwNN над kNN ##
+
