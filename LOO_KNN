@@ -58,8 +58,4 @@ for (i in 1:k)
 
 plot(K,точность,type = "l")
 
-min<-which.min(точность)
 
-points(K[min],точность[min],pch = 21, bg = "red", asp = 1)
-
-text( K[min],точность[min], sprintf("(%d; %.4f)", K[min], точность[min]), adj = c( 0, -1 ), col = "blue" )
