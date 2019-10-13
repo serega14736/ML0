@@ -107,7 +107,7 @@ kwNN <- function(xl, z, k,q)
 
 Рассмотрим точку Z(4.5, 1.8) на выборке "Ирисы Фишера". Применим метод kwNN и получим , что Z принадлежит к классу "зеленых кружочков".
 
-![1NN](https://github.com/serega14736/ML0/blob/master/img/KWNN1.png)
+![1NN](https://github.com/serega14736/ML0/blob/master/img/KwNN2.png)
 
 ## Карта классификации метода k-взвешеных ближайших соседей ## 
 
