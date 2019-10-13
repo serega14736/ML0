@@ -113,6 +113,12 @@ kwNN <- function(xl, z, k,q)
 
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/kartaKWNN.png)
 
+## LOO KwNN ##
+
+![1NN](https://github.com/serega14736/ML0/blob/master/img/LOO_KwNN.png)
+
+Получается q=1 LOO=0.0333.
+
 ## Преимущество метода kwNN над kNN ##
 
 Метод KNN
