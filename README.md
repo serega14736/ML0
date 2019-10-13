@@ -70,11 +70,11 @@ kNN <- function(xl, z, k)
 
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/kartaKNN.png)
 
-## Критерий скользящего контроля LOO для kwNN ##
+## Выберем оптимальное k, воспользовавшись критерием скользящего контроля LOO ##
 
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/LOOKNN1.png)
 
-Таким образом оптимальное k=6
+Таким образом оптимальное k=6, а LOO=0.333
 
 ## 3. kwNN. Метод k-взвешеных ближайших соседей: ##
 
