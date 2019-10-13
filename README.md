@@ -72,7 +72,7 @@ kNN <- function(xl, z, k)
 
 ## Критерий скользящего контроля LOO для kwNN ##
 
-![1NN](https://github.com/serega14736/ML0/blob/master/img/LOOKNN.png)
+![1NN](https://github.com/serega14736/ML0/blob/master/img/LOOKNN1.png)
 
 Таким образом оптимальное k=6
 
@@ -107,7 +107,7 @@ kwNN <- function(xl, z, k,q)
 
 Рассмотрим точку Z(4.5, 1.8) на выборке "Ирисы Фишера". Применим метод kwNN и получим , что Z принадлежит к классу "зеленых кружочков".
 
-![1NN](https://github.com/serega14736/ML0/blob/master/img/LOOKNN1.png)
+![1NN](https://github.com/serega14736/ML0/blob/master/img/KWNN1.png)
 
 ## Карта классификации метода k-взвешеных ближайших соседей ## 
 
