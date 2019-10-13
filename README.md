@@ -123,4 +123,9 @@ kwNN <- function(xl, z, k,q)
 
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/kwNNprimer.png)
 
+## Метод парзеновского окна ##
 
+В данном алгоритме выбирается следующий способ задать веса соседям : определить ![w_i](https://latex.codecogs.com/gif.latex?w_i) как функцию от расстояния ![rho](https://latex.codecogs.com/gif.latex?%24%5Crho%28u%2Cx_u%5E%7B%28i%29%7D%29%24), а не от ранга соседа i. Введём функцию ядра K(z), весовую функцию следующим образом:  
+![w_for_parzen](https://latex.codecogs.com/gif.latex?%24%24w%28u%2Ci%29%20%3D%20K%5Cleft%20%28%5Cfrac%7B1%7D%7Bh%7D%5Crho%28u%2Cx_u%5E%7B%28i%29%7D%29%20%5Cright%20%29%24%24),
+где параметр h - ширина окна.  
+Данный параметр будем подбирать по оценке скользящего контроля LOO и для различных ядер оптимальное значение ширины окна будет отличаться.
