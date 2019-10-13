@@ -111,7 +111,16 @@ kwNN <- function(xl, z, k,q)
 
 ## Карта классификации метода k-взвешеных ближайших соседей ## 
 
-![1NN](https://github.com/serega14736/ML0/blob/master/img/kartaKWNN.png)
+![1NN](https://github.com/serega14736/ML0/blob/master/img/KwNN.png)
 
 ## Преимущество метода kwNN над kNN ##
+
+Метод KNN
+
+![1NN](https://github.com/serega14736/ML0/blob/master/img/kNNprimer.png)
+
+Метод KwNN
+
+![1NN](https://github.com/serega14736/ML0/blob/master/img/kwNNprimer.png)
+
 
