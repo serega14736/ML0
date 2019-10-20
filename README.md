@@ -167,7 +167,9 @@ kwNN <- function(xl, z, k,q)
 
 ## Метод потенциальных функций ##
 Если в методе парзеновского окна центр окна поместить в классифицируемый объект, то получим метод потенциальных функций: 
+
 ![equation](http://latex.codecogs.com/gif.latex?a(u;X^l)&space;=&space;argmax_{y\epsilon&space;Y}&space;\sum_{i:y_u^i=y}{\gamma_i&space;K(\frac{\rho(u,x_i)}{h_i})},&space;\gamma_i&space;\geq&space;0,&space;h_i&space;>&space;0)
+
 Теперь ширина окна h зависит не от классифицуруемого объекта, а от обучающего x.
 
 
