@@ -161,6 +161,10 @@ kwNN <- function(xl, z, k,q)
 
 Требуется хранить выборку целиком;
 
+## Карта классификации для парзеновского окна с ядром епачникова: ##
+
+![1NN](https://github.com/serega14736/ML0/blob/master/img/kartaParsen.png)
+
 ## Метод потенциальных функций ##
 Если в методе парзеновского окна центр окна поместить в классифицируемый объект, то получим метод потенциальных функций: 
 ![equation](http://latex.codecogs.com/gif.latex?a(u;X^l)&space;=&space;argmax_{y\epsilon&space;Y}&space;\sum_{i:y_u^i=y}{\gamma_i&space;K(\frac{\rho(u,x_i)}{h_i})},&space;\gamma_i&space;\geq&space;0,&space;h_i&space;>&space;0)
