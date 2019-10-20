@@ -172,4 +172,4 @@ kwNN <- function(xl, z, k,q)
 
 Теперь ширина окна h зависит не от классифицуруемого объекта, а от обучающего x.
 
-
+![1NN](https://github.com/serega14736/ML0/blob/master/img/PotencFunc.jpg)
