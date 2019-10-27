@@ -209,5 +209,5 @@ kwNN <- function(xl, z, k,q)
 ## Недостатки алгоритма ##
 
 1) Относительно низкая эффективность
-
+2) необходимость задавать параметр ![equation](https://latex.codecogs.com/gif.latex?%5Cdelta) ;
 
