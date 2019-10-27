@@ -141,6 +141,53 @@ kwNN <- function(xl, z, k,q)
 ![equation](http://latex.codecogs.com/gif.latex?a(u;X^l,h)&space;=&space;argmax_{y\epsilon&space;Y}&space;\sum_{i:y_u^i=y}{K(\frac{\rho(u,x_u^i)}{h})})
 
 Этот алгоритм - алогритм парзеновского окна. h - ширина окна, подбирается по LOO.
+## Пример ##
+
+![1NN](https://github.com/serega14736/ML0/blob/master/img/loo_parsen_results.png)
+
+```
+# Епанечникова
+c1 <- function(r) 
+{
+  if (abs(r) > 1) 
+  {
+    return (0)
+  }
+  return ((3/4) * (1 - r*r))
+}
+# Квартическое
+c2 <- function(r) 
+{
+  if (abs(r) > 1)
+  {
+    return (0)
+  }
+  return ((15/16) * (1 - r*r)^2)
+}
+# Треугольное
+c3 <- function(r) 
+{
+  if (abs(r) > 1) 
+  {
+    return (0)
+  }
+  return (1 - abs(r))
+}
+# Гауссовское
+c4 <- function(r) 
+{
+  (2*pi)^0.5 * exp(-0.5 * r*r)
+}
+# Прямоугольное
+c5 <- function(r) 
+{
+  if (abs(r) > 1) 
+  {
+    return (0)
+  }
+  return (0.5)
+}
+```
 
 
 ## Преимущества: ##
