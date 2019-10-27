@@ -87,6 +87,7 @@ kNN <- function(xl, z, k)
 
 
 Реализация kwNN фунции
+
 ``` R
 kwNN <- function(xl, z, k,q)
 {
@@ -154,7 +155,7 @@ h=0.35 LOO=0.04
 
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/Karta_Epanechnikov.png)
 
-Реальзация фунцкий:
+Реальзация фунцкии:
 
 ``` R
 c1 <- function(r) 
@@ -175,7 +176,7 @@ h=0.35 LOO=0.04
 
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/Karta_Kvadrat.png)
 
-Реальзация фунцкий:
+Реальзация фунцкии:
 
 ``` R
 c2 <- function(r) 
@@ -195,7 +196,7 @@ h=0.35 LOO=0.04
 
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/Karta_Treyg.png)
 
-Реальзация фунцкий:
+Реальзация фунцкии:
 
 ``` R
 c3 <- function(r) 
@@ -215,7 +216,7 @@ h=0.1 LOO=0.04
 
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/Karta_Gaus.png)
 
-Реальзация фунцкий:
+Реальзация фунцкии:
 
 ```R
 c4 <- function(r) 
@@ -232,7 +233,7 @@ h=0.35 LOO=0.04
 
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/Karta_Pramoygol.png)
 
-Реальзация фунцкий:
+Реальзация фунцкии:
 
 ```R 
 c5 <- function(r) 
