@@ -140,7 +140,12 @@ kwNN <- function(xl, z, k,q)
 
 ![equation](http://latex.codecogs.com/gif.latex?a(u;X^l,h)&space;=&space;argmax_{y\epsilon&space;Y}&space;\sum_{i:y_u^i=y}{K(\frac{\rho(u,x_u^i)}{h})})
 
-Этот алгоритм - алогритм парзеновского окна. h - ширина окна, подбирается по LOO.
+Этот алгоритм - алогритм парзеновского окна. h - ширина окна.
+
+Формулы ядер:
+
+![1NN](https://github.com/serega14736/ML0/blob/master/img/ParsenFormul.png)
+
 ## Пример ##
 
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/loo_parsen_results.png)
