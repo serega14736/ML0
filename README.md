@@ -146,15 +146,15 @@ kwNN <- function(xl, z, k,q)
 
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/ParsenFormul.png)
 
-## Пример ##
+## Ядро Епанечникова ##
 
-![1NN](https://github.com/serega14736/ML0/blob/master/img/loo_parsen_results.png)
+![1NN](https://github.com/serega14736/ML0/blob/master/img/LOO_panechnikov.png)
 
-## Реальзация фунцкий ##
+![1NN](https://github.com/serega14736/ML0/blob/master/img/Karta_Epanechnikov.png)
+
+Реальзация фунцкий 
 
 ``` R
-# Епанечникова
-
 c1 <- function(r) 
 {
   if (abs(r) > 1) 
@@ -162,42 +162,6 @@ c1 <- function(r)
     return (0)
   }
   return ((3/4) * (1 - r*r))
-}
-# Квартическое
-
-c2 <- function(r) 
-{
-  if (abs(r) > 1)
-  {
-    return (0)
-  }
-  return ((15/16) * (1 - r*r)^2)
-}
-# Треугольное
-
-c3 <- function(r) 
-{
-  if (abs(r) > 1) 
-  {
-    return (0)
-  }
-  return (1 - abs(r))
-}
-# Гауссовское
-
-c4 <- function(r) 
-{
-  (2*pi)^0.5 * exp(-0.5 * r*r)
-}
-# Прямоугольное
-
-c5 <- function(r) 
-{
-  if (abs(r) > 1) 
-  {
-    return (0)
-  }
-  return (0.5)
 }
 ```
 
