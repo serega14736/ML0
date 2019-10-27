@@ -150,9 +150,11 @@ kwNN <- function(xl, z, k,q)
 
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/LOO_panechnikov.png)
 
+h=0.35 LOO=0.04
+
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/Karta_Epanechnikov.png)
 
-Реальзация фунцкий 
+Реальзация фунцкий:
 
 ``` R
 c1 <- function(r) 
@@ -165,6 +167,83 @@ c1 <- function(r)
 }
 ```
 
+## Ядро Квадратическое ##
+
+![1NN](https://github.com/serega14736/ML0/blob/master/img/LOO_Kvadrat.png)
+
+h=0.35 LOO=0.04	
+
+![1NN](https://github.com/serega14736/ML0/blob/master/img/Karta_Kvadrat.png)
+
+Реальзация фунцкий:
+
+``` R
+c2 <- function(r) 
+{
+  if (abs(r) > 1)
+  {
+    return (0)
+  }
+  return ((15/16) * (1 - r*r)^2)
+}
+```
+## Ядро Треугольное ##
+
+![1NN](https://github.com/serega14736/ML0/blob/master/img/LOO_Treyg.png)
+
+h=0.35 LOO=0.04	
+
+![1NN](https://github.com/serega14736/ML0/blob/master/img/Karta_Treyg.png)
+
+Реальзация фунцкий:
+
+``` R
+c3 <- function(r) 
+{
+  if (abs(r) > 1) 
+  {
+    return (0)
+  }
+  return (1 - abs(r))
+}
+```
+## Ядро Гауссовское ##
+
+![1NN](https://github.com/serega14736/ML0/blob/master/img/LOO_Gaus.png)
+
+h=0.1 LOO=0.04	
+
+![1NN](https://github.com/serega14736/ML0/blob/master/img/Karta_Gaus.png)
+
+Реальзация фунцкий:
+
+```R
+c4 <- function(r) 
+{
+  (2*pi)^0.5 * exp(-0.5 * r*r)
+}
+```
+
+## Ядро Прямоугольное ##
+
+![1NN](https://github.com/serega14736/ML0/blob/master/img/LOO_Pramoygol.png)
+
+h=0.35 LOO=0.04	
+
+![1NN](https://github.com/serega14736/ML0/blob/master/img/Karta_Pramoygol.png)
+
+Реальзация фунцкий:
+
+```R 
+c5 <- function(r) 
+{
+  if (abs(r) > 1) 
+  {
+    return (0)
+  }
+  return (0.5)
+}
+```
 
 ## Преимущества: ##
 1) При правильно выбраном h алгоритм способен классифицировать объект с хорошим качеством;
