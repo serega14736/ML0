@@ -145,6 +145,8 @@ kwNN <- function(xl, z, k,q)
 
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/loo_parsen_results.png)
 
+## Реальзация фунцкий ##
+
 ```
 # Епанечникова
 c1 <- function(r) 
