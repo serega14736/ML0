@@ -48,7 +48,7 @@
 
 ## Реализация kNN функции ##
 
-```
+``` R
 kNN <- function(xl, z, k)
 {
 	orderedXl <- sortObjectsByDist(xl, z)
@@ -87,7 +87,7 @@ kNN <- function(xl, z, k)
 
 
 Реализация kwNN фунции
-```
+``` R
 kwNN <- function(xl, z, k,q)
 {
 	 m <- c("setosa" = 0, "versicolor" = 0, "virginica" = 0)
@@ -147,7 +147,7 @@ kwNN <- function(xl, z, k,q)
 
 ## Реальзация фунцкий ##
 
-```
+``` R
 # Епанечникова
 c1 <- function(r) 
 {
