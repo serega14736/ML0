@@ -264,6 +264,68 @@ c5 <- function(r)
 ![equation](http://latex.codecogs.com/gif.latex?a(u;X^l)&space;=&space;argmax_{y\epsilon&space;Y}&space;\sum_{i:y_u^i=y}{\gamma_i&space;K(\frac{\rho(u,x_i)}{h_i})},&space;\gamma_i&space;\geq&space;0,&space;h_i&space;>&space;0)
 
 Теперь ширина окна h зависит не от классифицуруемого объекта, а от обучающего x.
+
+## реализация функции: ##
+```R
+potential <- function(xl, z,gamma, h) {
+  l <- dim(xl)[1]
+  n <- dim(xl)[2] - 1
+  distances <- sortObjectsByDist(xl, z)
+  m <- c("setosa" = 0, "versicolor" = 0, "virginica" = 0)
+  classes <- xl[1:l, n + 1]
+  for(i in 1:l)
+  {
+    w <- gamma[i] * c4(distances[i,2]/h)
+    m[classes[i]] <- m[classes[i]] + w
+  }
+  if(m[1]!=0 || m[2]!=0 || m[3]!=0)class <- names(which.max(m))
+  else class <- "not_class"
+  if(class==0)class <- "grey"
+  return (class)
+}
+h <- 1
+gamma <- rep(0,n)
+p <- c(0,n)
+E <- 5
+Q <- E + 1
+while(Q > E)
+{
+  t <- 1
+  while(t)
+  {
+    i <- sample(1:n, 1)
+
+    z <- c(xl[i,1], xl[i,2])
+    class <- potential(xl, z, gamma, h)
+    if(class!=xl[i,3])
+    {
+      gamma[i] <- gamma[i] + 1
+      t <- 0
+    }
+  }
+  Q <- 0
+  for(i in 1:n)
+  {
+    z <- c(xl[i,1], xl[i,2])
+    class <- potential(xl, z, gamma, h)
+    if(class != xl[i,3])Q <- Q+1
+  }
+}
+n <- length(gamma)
+gammamax <- max(gamma)
+for(i in 1:n)
+{
+  x <- xl[i,1]
+  y <- xl[i,2]
+  r <- h
+  if(gamma[i] > 0)
+  {
+    print(gamma[i]/E/gammamax)
+    color <- adjustcolor(colors[xl[i,3]], gamma[i]/E/gammamax)
+    draw.circle(x, y, r, 50, border = color, col = color)
+  }
+}
+```
 ## Визуализация потенциалов ##
 ## Гауссовское максимум ошибок = 5 ##
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/Potenc_gaus.png)
