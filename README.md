@@ -266,14 +266,14 @@ c5 <- function(r)
 Теперь ширина окна h зависит не от классифицуруемого объекта, а от обучающего x.
 ## Визуализация потенциалов ##
 ## Гауссовское максимум ошибок = 5 ##
-[!1NN](https://github.com/serega14736/ML0/blob/master/img/Potenc_gaus.png)
+![1NN](https://github.com/serega14736/ML0/blob/master/img/Potenc_gaus.png)
 ## Карты классификации Гауса ##
-[!1NN](https://github.com/serega14736/ML0/blob/master/img/PotencGaus_map.png)
+![1NN](https://github.com/serega14736/ML0/blob/master/img/PotencGaus_map.png)
 
 ## Треугольное максимум ошибок =5 ##
-[!1NN](https://github.com/serega14736/ML0/blob/master/img/Potenc_treyg.png)
+![1NN](https://github.com/serega14736/ML0/blob/master/img/Potenc_treyg.png)
 ## Карты классификации Треугольника ##
-[!1NN](https://github.com/serega14736/ML0/blob/master/img/PotencTreyg_map.png)
+![1NN](https://github.com/serega14736/ML0/blob/master/img/PotencTreyg_map.png)
 ## 6. STOLP ##
 Выделяют несколько видов объектов обучения:
 
