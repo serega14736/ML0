@@ -434,8 +434,8 @@ line_norm <- function(center,A)
 }
 ```
 ## Некорелированы ##
-![1NN]https://github.com/serega14736/ML0/blob/master/img/elipse.png)
+![1NN](https://github.com/serega14736/ML0/blob/master/img/elipse.png)
 ## Одинаковая дисперсия ##
-![1NN]https://github.com/serega14736/ML0/blob/master/img/sphera.png)
+![1NN](https://github.com/serega14736/ML0/blob/master/img/sphera.png)
 ## Корелированы ##
-![1NN]https://github.com/serega14736/ML0/blob/master/img/elips_povorot.png)
+![1NN](https://github.com/serega14736/ML0/blob/master/img/elips_povorot.png)
