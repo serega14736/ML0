@@ -336,7 +336,7 @@ for(i in 1:n)
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/Potenc_treyg.png)
 ## Карты классификации Треугольника ##
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/PotencTreyg_map.png)
-## 6. STOLP ##
+## 6. STOLP. ##
 Выделяют несколько видов объектов обучения:
 
 1) Эталонные — типичные представители классов. Если классифицируемый объект близок к эталону, то, скорее всего, он принадлежит тому же классу.
