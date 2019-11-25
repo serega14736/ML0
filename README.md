@@ -390,7 +390,7 @@ for(i in 1:n)
 
 и ковариоционной матрицей 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\Sigma&space;\in&space;R^{n*n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Sigma&space;\in&space;R^{n*n}" title="\Sigma \in R^{n*n}" /></a>
-матрица симетрична, невырожденная, положительно определенная)
+(матрица симетрична, невырожденная, положительно определенная)
 
 
 
