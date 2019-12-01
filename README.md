@@ -132,16 +132,7 @@ kwNN <- function(xl, z, k,q)
 
 ## 4. Метод Парзеновского окна ##
 
-Рассмотрим весовую функцию w(i,u) как функцию не от ранга соседа, а как функцию от расстояния 
-![equation](http://latex.codecogs.com/gif.latex?\rho(u,x_u^i):)
-
-![equation](http://latex.codecogs.com/gif.latex?w(i,u)&space;=&space;K(\frac{1}{h}&space;\rho&space;(u,x_u^i)))
-
-где K(z) - невозрастающая на ![equation](http://latex.codecogs.com/gif.latex?[0,\infty&space;]) (гипотеза комактности) функция яда. В этом случае метричесикй классификатор примет следующий вид:
-
-![equation](http://latex.codecogs.com/gif.latex?a(u;X^l,h)&space;=&space;argmax_{y\epsilon&space;Y}&space;\sum_{i:y_u^i=y}{K(\frac{\rho(u,x_u^i)}{h})})
-
-Этот алгоритм - алогритм парзеновского окна. h - ширина окна.
+Ещё один способ задать веса соседям — определить <a href="https://www.codecogs.com/eqnedit.php?latex=w_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?w_i" title="w_i" /></a> как функцию от расстояния <a href="https://www.codecogs.com/eqnedit.php?latex=\rho(u,x_{i,u})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\rho(u,x_{i,u})" title="\rho(u,x_{i,u})" /></a> а не от ранга соседа <a href="https://www.codecogs.com/eqnedit.php?latex=i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?i" title="i" /></a>. Введём функцию ядра <a href="https://www.codecogs.com/eqnedit.php?latex=K(z)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?K(z)" title="K(z)" /></a> , невозрастающую на <a href="https://www.codecogs.com/eqnedit.php?latex=[0,\infty]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?[0,\infty]" title="[0,\infty]" /></a>,  и рассмотрим алгоритм <a href="https://www.codecogs.com/eqnedit.php?latex=a(u;X^l,h,K)=arg{\underset{y\in&space;Y}{max}}&space;\sum^l_{i=1}&space;[y_{i,u}=y]K(\frac{{\rho(u,x_{u,i})}&space;}{h})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?a(u;X^l,h,K)=arg{\underset{y\in&space;Y}{max}}&space;\sum^l_{i=1}&space;[y_{i,u}=y]K(\frac{{\rho(u,x_{u,i})}&space;}{h})" title="a(u;X^l,h,K)=arg{\underset{y\in Y}{max}} \sum^l_{i=1} [y_{i,u}=y]K(\frac{{\rho(u,x_{u,i})} }{h})" /></a>. Параметр h называется шириной окна и играет примерно ту же роль, что и число соседей k.
 
 Формулы ядер:
 
