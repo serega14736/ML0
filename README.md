@@ -425,3 +425,33 @@ line_norm <- function(center,A)
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/sphera.png)
 ## Корелированы ##
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/elips_povorot.png)
+
+## Наивный нормальный байесовский классификатор ##
+
+Байесовский классификатор — широкий класс алгоритмов классификации, основанный на принципе максимума апостериорной вероятности. Для классифицируемого объекта вычисляются функции правдоподобия каждого из классов, по ним вычисляются апостериорные вероятности классов. Объект относится к тому классу, для которого апостериорная вероятность максимальна.
+
+Наивный байесовский классификатор максимизирует апостериорную вероятность класса, в этом случае классификатор имеет вид:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=h(x)=\arg\max_{y&space;\in&space;Y}p(y|x)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?h(x)=\arg\max_{y&space;\in&space;Y}p(y|x)" title="h(x)=\arg\max_{y \in Y}p(y|x)" /></a>
+
+По теореме байеса формулу можно переписать в виде:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=h(x)=\arg\max_{y&space;\in&space;Y}p(y|x)=\arg\max_{y&space;\in&space;Y}\frac{p(x|y)p(y)}{p(x)}=\arg\max_{y&space;\in&space;Y}p(x|y)p(y)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?h(x)=\arg\max_{y&space;\in&space;Y}p(y|x)=\arg\max_{y&space;\in&space;Y}\frac{p(x|y)p(y)}{p(x)}=\arg\max_{y&space;\in&space;Y}p(x|y)p(y)" title="h(x)=\arg\max_{y \in Y}p(y|x)=\arg\max_{y \in Y}\frac{p(x|y)p(y)}{p(x)}=\arg\max_{y \in Y}p(x|y)p(y)" /></a>
+
+Решающее правило принимает вид:
+
+![raspr](https://raw.githubusercontent.com/TIR13/ML0/master/bayes/img/naivv.gif)
+
+## Реализация на R##
+```R
+naiv <- function(x,mu,sigma,P)
+{
+  p <- log(1,P)
+  p <- 0
+  sigma <- as.numeric(sigma)
+  pyj <- (1/(sqrt(2*pi*sigma^2)))*exp(-((x-mu)^2)/(2*sigma^2))
+  p <- p+log(pyj[1,1])+log(pyj[1,2])
+  
+  return(p)
+}
+```
