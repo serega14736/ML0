@@ -442,7 +442,7 @@ line_norm <- function(center,A)
 
 ![raspr](https://raw.githubusercontent.com/TIR13/ML0/master/bayes/img/naivv.gif)
 
-## Реализация на R##
+## Реализация на R ##
 ```R
 naiv <- function(x,mu,sigma,P)
 {
@@ -455,3 +455,8 @@ naiv <- function(x,mu,sigma,P)
   return(p)
 }
 ```
+## Пример ##
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\mu_1(0,0),\mu_2(5,5),\Sigma_1(2,0,0,2),\Sigma_2(1,0,0,1)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mu_1(0,0),\mu_2(5,5),\Sigma_1(2,0,0,2),\Sigma_2(1,0,0,1)" title="\mu_1(0,0),\mu_2(5,5),\Sigma_1(2,0,0,2),\Sigma_2(1,0,0,1)" /></a>
+
+![1NN](https://github.com/serega14736/ML0/blob/master/img/naivklass_map.png)
