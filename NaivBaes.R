@@ -1,84 +1,113 @@
-library("MASS")
 
-estimateMu <- function(x)
-{
-  m <- dim(x)[2]
-  mu <- matrix(NA, 1, m)
-  for(i in 1:m)
-  {
-    mu[1,i] <- mean(x[,i])
-  }
-  return(mu)
+Skip to content
+Pull requests
+Issues
+Marketplace
+Explore
+@serega14736
+
+1
+1
+
+    1
+
+TIR13/ML0
+Code
+Issues 1
+Pull requests 0
+Actions
+Projects 0
+Wiki
+Security
+Insights
+ML0/bayes/naiv.R
+@TIR13 TIR13 Update naiv.R 4fb76ed 28 days ago
+73 lines (50 sloc) 1.34 KB
+objectCounter <- 500
+
+naiv <- function(x, mu, sigma, lamda, P){
+	n <- 2
+	res <- log(lamda*P)
+	
+	for(i in 1 : n){
+		pyj <- (1/(sigma[i]*sqrt(2*pi))) * exp(-1 * ((x[i] - mu[i])^2)/(2*sigma[i]^2))
+    	res <- res + log(pyj)
+	}
+	
+	return(res)
 }
 
-estimateSigma <- function(x,mu)
-{
-  n <- dim(x)[1]
-  m <- dim(x)[2]
-  sigma <- matrix(0, 1, 1)
-  for(i in 1:n)
-  {
-    sigma <- sigma + ((x[i,]-mu)%*%(t((x[i,]-mu))))
-    
-    
-  }
-  return(sigma/(n-1))
-}
+get_mu <- function(xl){
 
-naiv <- function(x,mu,sigma,P)
-{
-  p <- log(1,P)
-  p <- 0
-  sigma <- as.numeric(sigma)
-  pyj <- (1/(sqrt(2*pi*sigma^2)))*exp(-((x-mu)^2)/(2*sigma^2))
-  p <- p+log(pyj[1,1])+log(pyj[1,2])
+	l <- dim(xl)[1] 
+	return(c(sum(xl[,1])/l, sum(xl[,2])/l))
   
-  return(p)
 }
 
-n <- 300
+get_sigma <- function(xl, mu){
+
+	l <- dim(xl)[1] 
+	return(c(sum((xl[,1] - mu[1])^2)/l, sum((xl[,2] - mu[2])^2)/l))
+	
+}
+
+library(MASS)
 sigma1 <- matrix(c(2, 0, 0, 2),2,2)
 sigma2 <- matrix(c(1, 0, 0, 1),2,2)
 
-mu1 <- c(0, 0)
-mu2 <- c(5, 5)
+mu1 <- c(0,0)
+mu2 <- c(4,4)
 
-xy1 <- mvrnorm(n=n, mu = mu1, Sigma = sigma1)
-xy2 <- mvrnorm(n=n, mu = mu2, Sigma = sigma2)
+x1 <- mvrnorm(n = objectCounter, mu1, sigma1)
+x2 <- mvrnorm(n = objectCounter, mu2, sigma2)
 
-plotxmin <- min(xy1[,1], xy2[,1]) - 1
-plotymin <- min(xy1[,2], xy2[,2]) - 1
-plotxmax <- max(xy1[,1], xy2[,1]) + 1
-plotymax <- max(xy1[,2], xy2[,2]) + 1
-plot(xy1[,1],xy2[,2], type="n", xlab = "x", ylab = "y", xlim=c(plotxmin, plotxmax), ylim = c(plotymin, plotymax))
+xy1 <- cbind(x1,1) 
+xy2 <- cbind(x2,2) 
+  
+xl <- rbind(xy1,xy2)
 
-colors <- c("tan1", "royalblue")
-points(xy1, pch=21, col=colors[1], bg=colors[1])
-points(xy2, pch=21, col=colors[2], bg=colors[2])
+colors <- c("green", "yellow")
+plot(xl[,1],xl[,2], pch = 21,main = "Наивный байесовский классификатор", col = colors[xl[,3]], asp = 1, bg=colors[xl[,3]])
+  
+mu1 <- get_mu(x1)
+mu2 <- get_mu(x2)     
 
-mu1 <- estimateMu(xy1)
-mu2 <- estimateMu(xy2)
+sigma1 <- get_sigma(x1, mu1)
+sigma2 <- get_sigma(x2, mu2)
+  
+x1 <- -15;
 
-sigma1 <-estimateSigma(xy1,mu1)
-sigma2 <-estimateSigma(xy2,mu2)
-
-x <- -10
-while(x < 10) 
-{
-  y<--10
-  while (y < 10) 
-  {
-    z <- c(x,y)  
-    p1 <- naiv(z,mu1,sigma1,0.5)
-    p2 <- naiv(z,mu2,sigma2,0.5)
-    if(p1 > p2)  
-    {
-      class <- 1
-    }else{
-      class <- 2
+while(x1 < 20){
+	x2 <- -8;
+    
+    while(x2 < 13){          
+    
+    	class <- 0;
+    	
+    	if(naiv(c(x1,x2), mu1, sigma1, 1, 0.5) > naiv(c(x1,x2), mu2, sigma2, 1, 0.5)){
+        	class <- 1
+    	} 
+    	else {
+        	class <- 2
+    	}
+    	
+    	points(x1, x2, pch = 21, col=colors[class], asp = 1)
+    	x2 <- x2 + 0.2
     }
-    points(z[1], z[2], pch = 21, col = colors[class])
-    y <- y+0.3
-  }
-  x <- x+0.3
+x1 <- x1 + 0.2
 }
+
+    © 2019 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
