@@ -440,7 +440,7 @@ line_norm <- function(center,A)
 
 Решающее правило принимает вид:
 
-![raspr](https://raw.githubusercontent.com/TIR13/ML0/master/bayes/img/naivv.gif)
+<a href="https://www.codecogs.com/eqnedit.php?latex=P(x_i|y)=\frac{1}{\sqrt[]{2\pi\sigma^2_y}}exp(-\frac{(x_i-\mu_y)^2}{2\sigma^2_y})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(x_i|y)=\frac{1}{\sqrt[]{2\pi\sigma^2_y}}exp(-\frac{(x_i-\mu_y)^2}{2\sigma^2_y})" title="P(x_i|y)=\frac{1}{\sqrt[]{2\pi\sigma^2_y}}exp(-\frac{(x_i-\mu_y)^2}{2\sigma^2_y})" /></a>
 
 ## Реализация на R ##
 ```R
