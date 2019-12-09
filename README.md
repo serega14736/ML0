@@ -440,23 +440,21 @@ line_norm <- function(center,A)
 
 Решающее правило принимает вид:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=P(x_i|y)=\frac{1}{\sqrt[]{2\pi\sigma^2_y}}exp(-\frac{(x_i-\mu_y)^2}{2\sigma^2_y})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P(x_i|y)=\frac{1}{\sqrt[]{2\pi\sigma^2_y}}exp(-\frac{(x_i-\mu_y)^2}{2\sigma^2_y})" title="P(x_i|y)=\frac{1}{\sqrt[]{2\pi\sigma^2_y}}exp(-\frac{(x_i-\mu_y)^2}{2\sigma^2_y})" /></a>
+https://raw.githubusercontent.com/TIR13/ML0/master/bayes/img/naivv.gif
 
 ## Реализация на R ##
 ```R
-naiv <- function(x,mu,sigma,P)
-{
-  p <- log(1,P)
-  p <- 0
-  sigma <- as.numeric(sigma)
-  pyj <- (1/(sqrt(2*pi*sigma^2)))*exp(-((x-mu)^2)/(2*sigma^2))
-  p <- p+log(pyj[1,1])+log(pyj[1,2])
-  
-  return(p)
+naiv <- function(x, mu, sigma, lamda, P){
+	n <- 2
+	res <- log(lamda*P)
+	
+	for(i in 1 : n){
+		pyj <- (1/(sigma[i]*sqrt(2*pi))) * exp(-1 * ((x[i] - mu[i])^2)/(2*sigma[i]^2))
+    	res <- res + log(pyj)
+	}
+	
+	return(res)
 }
 ```
 ## Пример ##
-
-<a href="https://www.codecogs.com/eqnedit.php?latex=\mu_1(0,0),\mu_2(5,5),\Sigma_1(2,0,0,2),\Sigma_2(1,0,0,1)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mu_1(0,0),\mu_2(5,5),\Sigma_1(2,0,0,2),\Sigma_2(1,0,0,1)" title="\mu_1(0,0),\mu_2(5,5),\Sigma_1(2,0,0,2),\Sigma_2(1,0,0,1)" /></a>
-
-![1NN](https://github.com/serega14736/ML0/blob/master/img/naivklass_map.png)
+![1NN](https://github.com/serega14736/ML0/blob/master/img/NaivBaess.jpeg)
