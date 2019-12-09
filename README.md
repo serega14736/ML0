@@ -440,7 +440,7 @@ line_norm <- function(center,A)
 
 Решающее правило принимает вид:
 
-https://raw.githubusercontent.com/TIR13/ML0/master/bayes/img/naivv.gif
+![1NN](https://raw.githubusercontent.com/TIR13/ML0/master/bayes/img/naivv.gif)
 
 ## Реализация на R ##
 ```R
