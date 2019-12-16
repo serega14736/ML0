@@ -456,5 +456,5 @@ naiv <- function(x, mu, sigma, lamda, P){
 	return(res)
 }
 ```
-## Пример ##
+## Пример  ##
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/NaivBaess.jpeg)
