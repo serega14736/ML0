@@ -479,6 +479,8 @@ naiv <- function(x, mu, sigma, lamda, P){
 ![1NN](http://www.machinelearning.ru/mimetex/?a(x,w)%20=%20\mathrm{arg}\max_{y\in%20Y}\,%20\sum_{j=0}^n%20w_{yj}%20f_j(x)%20=%20\mathrm{arg}\max_{y\in%20Y}\,%20\langle%20x,w_y%20\rangle),
 где каждому классу соотвествует свой вектор весов ![1NN](http://www.machinelearning.ru/mimetex/?w_y=(w_{y0},w_{y1},\ldots,w_{yn})).
 
+## Adaline ##
+
 ## Реализация ## 
 ``` R
 loss_ada <- function(xi, yi, w) {
