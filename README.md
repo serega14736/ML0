@@ -480,8 +480,10 @@ naiv <- function(x, mu, sigma, lamda, P){
 где каждому классу соотвествует свой вектор весов ![1NN](http://www.machinelearning.ru/mimetex/?w_y=(w_{y0},w_{y1},\ldots,w_{yn})).
 
 ## Adaline ##
+Adaline (Адаптивны линейный элемент)  - это линейный алгоритм классификации, в котором используется квадратичная функция потерь. Возьмем в качестве функции потерь <a href="https://www.codecogs.com/eqnedit.php?latex=L'(M)&space;=&space;2(\left&space;\langle&space;w,x_i&space;\right&space;\rangle&space;y_i&space;-1)&space;x_i&space;y_i&space;=&space;2(\left&space;\langle&space;w,x_i&space;\right&space;\rangle&space;-&space;y_i)x_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?L'(M)&space;=&space;2(\left&space;\langle&space;w,x_i&space;\right&space;\rangle&space;y_i&space;-1)&space;x_i&space;y_i&space;=&space;2(\left&space;\langle&space;w,x_i&space;\right&space;\rangle&space;-&space;y_i)x_i" title="L'(M) = 2(\left \langle w,x_i \right \rangle y_i -1) x_i y_i = 2(\left \langle w,x_i \right \rangle - y_i)x_i" /></a> и следовательно получим правило обновения:
+<a href="https://www.codecogs.com/eqnedit.php?latex=w&space;=&space;w&space;-&space;\eta(\langle&space;w,x_i&space;\rangle-y_i)x_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?w&space;=&space;w&space;-&space;\eta(\langle&space;w,x_i&space;\rangle-y_i)x_i" title="w = w - \eta(\langle w,x_i \rangle-y_i)x_i" /></a>
 
-## Реализация ## 
+## Реализация ##  
 ``` R
 loss_ada <- function(xi, yi, w) {
 	mi <- c(crossprod(w, xi)) * yi
