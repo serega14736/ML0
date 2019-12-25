@@ -458,3 +458,43 @@ naiv <- function(x, mu, sigma, lamda, P){
 ```
 ## Пример  ##
 ![1NN](https://github.com/serega14736/ML0/blob/master/img/NaivBaess.jpeg)
+
+## Линейные алгоритмы классификации ##
+
+Линейный классификатор — алгоритм классификации, основанный на построении линейной разделяющей поверхности. В случае двух классов разделяющей поверхностью является гиперплоскость, которая делит пространство признаков на два полупространства. В случае большего числа классов разделяющая поверхность кусочно-линейна.
+
+Пусть объекты описываются n числовыми признаками ![1NN](http://www.machinelearning.ru/mimetex/?f_j:\:%20X\to\mathbb{R},\;%20j=1,\ldots,n). Тогда пространство признаковых описаний объектов есть ![1NN](http://www.machinelearning.ru/mimetex/?X=\mathbb{R}^n). Пусть Y — конечное множество номеров (имён, меток) классов.
+
+Случай двух классов
+Положим ![1NN](http://www.machinelearning.ru/mimetex/?Y=\{-1,+1\})
+
+Линейным классификатором называется алгоритм классификации ![1NN](http://www.machinelearning.ru/mimetex/?a:\;%20X\to%20Y) вида
+
+![1NN](http://www.machinelearning.ru/mimetex/?a(x,w)%20=%20\mathrm{sign}\left(%20\sum_{j=1}^n%20w_j%20f_j(x)%20-%20w_0%20\right)%20=%20\mathrm{sign}\langle%20x,w%20\rangle),
+где ![1NN](http://www.machinelearning.ru/mimetex/?w_j) — вес j-го признака, ![1NN](http://www.machinelearning.ru/mimetex/?w_0) — порог принятия решения, ![1NN](http://www.machinelearning.ru/mimetex/?w=(w_0,w_1,\ldots,w_n)) — вектор весов, ![1NN](http://www.machinelearning.ru/mimetex/?\langle%20x,w%20\rangle) — скалярное произведение признакового описания объекта на вектор весов. Предполагается, что искусственно введён «константный» нулевой признак: ![1NN](http://www.machinelearning.ru/mimetex/?f_{0}(x)=-1)
+
+Случай произвольного числа классов
+Линейный классификатор определяется выражением
+
+![1NN](http://www.machinelearning.ru/mimetex/?a(x,w)%20=%20\mathrm{arg}\max_{y\in%20Y}\,%20\sum_{j=0}^n%20w_{yj}%20f_j(x)%20=%20\mathrm{arg}\max_{y\in%20Y}\,%20\langle%20x,w_y%20\rangle),
+где каждому классу соотвествует свой вектор весов ![1NN](http://www.machinelearning.ru/mimetex/?w_y=(w_{y0},w_{y1},\ldots,w_{yn})).
+
+## Реализация ## 
+``` R
+loss_ada <- function(xi, yi, w) {
+	mi <- c(crossprod(w, xi)) * yi
+	l <- (mi - 1)^2
+	return(l)
+}
+
+upd_ada <- function(xi, yi, w, eta) {
+	wx <- c(crossprod(w, xi))
+	ld <- (wx - yi) * xi
+	W <- w - eta * ld
+	return(W)
+}
+```
+
+Работа алгоритма при помощи ADALINE
+
+![1NN](https://github.com/serega14736/ML0/blob/master/img/Adaline.png)
