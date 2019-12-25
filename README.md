@@ -465,7 +465,7 @@ naiv <- function(x, mu, sigma, lamda, P){
 
 Пусть объекты описываются n числовыми признаками ![1NN](http://www.machinelearning.ru/mimetex/?f_j:\:%20X\to\mathbb{R},\;%20j=1,\ldots,n). Тогда пространство признаковых описаний объектов есть ![1NN](http://www.machinelearning.ru/mimetex/?X=\mathbb{R}^n). Пусть Y — конечное множество номеров (имён, меток) классов.
 
-Случай двух классов
+### Случай двух классов ###
 
 Положим ![1NN](http://www.machinelearning.ru/mimetex/?Y=\{-1,+1\})
 
@@ -474,7 +474,7 @@ naiv <- function(x, mu, sigma, lamda, P){
 ![1NN](http://www.machinelearning.ru/mimetex/?a(x,w)%20=%20\mathrm{sign}\left(%20\sum_{j=1}^n%20w_j%20f_j(x)%20-%20w_0%20\right)%20=%20\mathrm{sign}\langle%20x,w%20\rangle),
 где ![1NN](http://www.machinelearning.ru/mimetex/?w_j) — вес j-го признака, ![1NN](http://www.machinelearning.ru/mimetex/?w_0) — порог принятия решения, ![1NN](http://www.machinelearning.ru/mimetex/?w=(w_0,w_1,\ldots,w_n)) — вектор весов, ![1NN](http://www.machinelearning.ru/mimetex/?\langle%20x,w%20\rangle) — скалярное произведение признакового описания объекта на вектор весов. Предполагается, что искусственно введён «константный» нулевой признак: ![1NN](http://www.machinelearning.ru/mimetex/?f_{0}(x)=-1)
 
-Случай произвольного числа классов
+### Случай произвольного числа классов ###
 
 Линейный классификатор определяется выражением
 
